@@ -5,9 +5,7 @@ import { FooterComponent } from '../footer/footer.component';
 @Component({
   selector: 'mi-portafolio',
   standalone: true,
-  imports: [NavComponent,
-    FooterComponent
-  ],
+  imports: [NavComponent, FooterComponent],
   templateUrl: './mi-portafolio.component.html',
   styleUrl: './mi-portafolio.component.css'
 })
