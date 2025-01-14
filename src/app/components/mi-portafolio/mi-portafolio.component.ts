@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavComponent } from '../nav/nav.component';
 import { FooterComponent } from '../footer/footer.component';
-import { HomeComponent } from '../pages/home/home.component';
+import { HomeComponent } from '../pages/index';
 
 @Component({
   selector: 'mi-portafolio',
