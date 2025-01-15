@@ -1,9 +1,12 @@
 <mat-toolbar>
+  <button mat-icon-button class="icon" aria-label="">
+    <mat-icon>menu</mat-icon>
+  </button>
   <span class="spacer"></span>
   <span>Here the name</span>
   <span class="spacer"></span>
   <button mat-button>Inicio</button>
-  <button mat-button>Acerca de</button>
+  <button mat-button (click)="scrollToSection('about')">Acerca de</button>
   <button mat-button>Experiencia</button>
   <button mat-button>Servicios</button>
   <button mat-button>Portafolio</button>
