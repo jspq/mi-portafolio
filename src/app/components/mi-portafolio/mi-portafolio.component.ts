@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavComponent } from '../nav/nav.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ScrollToTopComponent } from '../index';
 import { HomeComponent, AboutComponent, ExperienceComponent } from '../pages/index';
 
 @Component({
@@ -11,7 +12,8 @@ import { HomeComponent, AboutComponent, ExperienceComponent } from '../pages/ind
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    ScrollToTopComponent
   ],
   templateUrl: './mi-portafolio.component.html',
   styleUrl: './mi-portafolio.component.css'
