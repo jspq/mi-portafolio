@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MiPortafolioComponent } from './components/mi-portafolio/mi-portafolio.component';
+import { ThemeService } from './services';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,6 @@ import { MiPortafolioComponent } from './components/mi-portafolio/mi-portafolio.
 })
 export class AppComponent {
   title = 'mi-portafolio';
+
+  constructor(public themeService: ThemeService) { }
 }
