@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
-  background-color: #1f1f1f;
-  color: #ffffff;
+  /* background-color: #1f1f1f; */
+  /* color: #ffffff;s */
   padding: 20px 0;
   text-align: center;
 }
@@ -25,12 +25,12 @@
 .footer-column h3 {
   margin-bottom: 10px;
   font-size: 18px;
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 
 .footer-column p {
   font-size: 16px;
-  color: #cccccc;
+  /* color: #cccccc; */
 }
 
 .footer-column ul {
@@ -45,7 +45,7 @@
 
 .footer-column ul li a {
   text-decoration: none;
-  color: #ffffff;
+  /* color: #ffffff; */
   transition: color 0.3s;
 }
 
@@ -56,7 +56,7 @@
 .footer-column a {
   margin: 0 10px;
   font-size: 20px;
-  color: #ffffff;
+  /* color: #ffffff; */
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -73,7 +73,7 @@ footer i {
   margin-top: 20px;
   padding-top: 10px;
   border-top: 1px solid #333333;
-  color: #cccccc;
+  /* color: #cccccc; */
   font-size: 14px;
   text-align: center;
 }
