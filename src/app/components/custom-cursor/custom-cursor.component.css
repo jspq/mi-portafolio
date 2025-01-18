@@ -10,6 +10,7 @@
   position: fixed;
   z-index: 9999;
   transition: all 0.2s ease;
+  transition-duration: 50ms;
   transform: translate(-50%, -50%);
   will-change: transform, width, height;
   mix-blend-mode: difference;
@@ -20,13 +21,14 @@
 }
 
 .cursor-ring {
-  width: 32px;
-  height: 32px;
+  width: 27px;
+  height: 27px;
   border: 1.5px solid rgba(206, 37, 37, 0.8);
   border-radius: 50%;
   position: fixed;
   z-index: 9998;
   transition: all 0.3s ease-out;
+  transition-duration: 50ms;
   animation: pulse 2s infinite;
   transform: translate(-50%, -50%);
   will-change: transform, width, height, border;
