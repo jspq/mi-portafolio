@@ -5,8 +5,10 @@ import { MiPortafolioComponent } from './components/mi-portafolio/mi-portafolio.
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MiPortafolioComponent,
-    RouterOutlet],
+  imports: [
+    RouterOutlet,
+    MiPortafolioComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
