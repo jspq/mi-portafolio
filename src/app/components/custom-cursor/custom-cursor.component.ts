@@ -5,6 +5,7 @@ interface CursorState {
   y: number;
   isSelecting: boolean;
   isClicking: boolean;
+  isPointer: boolean;
 }
 
 @Component({
@@ -29,18 +30,24 @@ export class CustomCursorComponent implements OnDestroy {
     x: 0,
     y: 0,
     isSelecting: false,
-    isClicking: false
+    isClicking: false,
+    isPointer: false
   });
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: MouseEvent) {
+    const element = document.elementFromPoint(e.clientX, e.clientY);
+    const computedStyle = element ? window.getComputedStyle(element) : null;
+    const isPointer = computedStyle?.cursor === 'pointer';
+
     this.targetX = e.clientX;
     this.targetY = e.clientY;
 
     this.cursorState.update(state => ({
       ...state,
       x: e.clientX,
-      y: e.clientY
+      y: e.clientY,
+      isPointer
     }));
 
     if (!this.animationFrameId) {
