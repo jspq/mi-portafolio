@@ -11,3 +11,15 @@ body.cursor-active .cursor-dot,
 body.cursor-active .cursor-ring {
   opacity: 1;
 }
+
+input,
+textarea,
+[contenteditable] {
+  cursor: text !important;
+}
+
+button,
+a,
+.clickable {
+  cursor: pointer !important;
+}
