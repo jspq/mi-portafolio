@@ -7,10 +7,10 @@
   <span class="spacer"></span>
   <button mat-button>Inicio</button>
   <button mat-button (click)="scrollToSection('about')">Acerca de</button>
-  <button mat-button>Experiencia</button>
-  <button mat-button>Servicios</button>
-  <button mat-button>Portafolio</button>
-  <button mat-button>Contactame</button>
+  <button mat-button (click)="scrollToSection('experience')">Experiencia</button>
+  <button mat-button (click)="scrollToSection('services')">Servicios</button>
+  <button mat-button (click)="scrollToSection('portfolio')">Portafolio</button>
+  <button mat-button (click)="scrollToSection('contact')">Contactame</button>
   <span class="spacer"></span>
 
   <button mat-icon-button class="icon dark-mode-icon" aria-label="">

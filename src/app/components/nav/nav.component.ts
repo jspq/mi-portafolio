@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ViewportScroller } from '@angular/common';
 
 /**
  * @title Basaic sidenav
@@ -16,9 +15,10 @@ import { ViewportScroller } from '@angular/common';
 })
 export class NavComponent {
 
-  constructor(private viewportScroller: ViewportScroller) { }
-
-  scrollToSection(sectionId: string): void {
-    this.viewportScroller.scrollToAnchor(sectionId);
+  scrollToSection(elementId: string): void {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
