@@ -1,19 +1,37 @@
-<mat-toolbar>
-  <button mat-icon-button class="icon" aria-label="">
+<mat-toolbar color="primary" class="toolbar">
+  <button mat-icon-button (click)="toggleSidenav()" class="menu-button" aria-label="">
     <mat-icon>menu</mat-icon>
   </button>
+
   <span class="spacer"></span>
-  <span>Here the name</span>
-  <span class="spacer"></span>
-  <button mat-button>Inicio</button>
-  <button mat-button (click)="scrollToSection('about')">Acerca de</button>
-  <button mat-button (click)="scrollToSection('experience')">Experiencia</button>
-  <button mat-button (click)="scrollToSection('services')">Servicios</button>
-  <button mat-button (click)="scrollToSection('portfolio')">Portafolio</button>
-  <button mat-button (click)="scrollToSection('contact')">Contactame</button>
+  <span class="toolbar-title">Your Name</span>
   <span class="spacer"></span>
 
-  <button mat-icon-button class="icon dark-mode-icon" aria-label="">
+  <div class="desktop-menu">
+    <button mat-button (click)="scrollToSection('inicio')">Inicio</button>
+    <button mat-button (click)="scrollToSection('about')">Acerca de</button>
+    <button mat-button (click)="scrollToSection('experience')">Experiencia</button>
+    <button mat-button (click)="scrollToSection('services')">Servicios</button>
+    <button mat-button (click)="scrollToSection('portfolio')">Portafolio</button>
+    <button mat-button (click)="scrollToSection('contact')">Contáctame</button>
+  </div>
+
+  <span class="spacer"></span>
+
+  <button mat-icon-button class="dark-mode-toggle" aria-label="">
     <mat-icon>dark_mode</mat-icon>
   </button>
 </mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over">
+    <mat-nav-list>
+      <mat-list-item (click)="scrollToSection('inicio'); sidenav.close()">Inicio</mat-list-item>
+      <mat-list-item (click)="scrollToSection('about'); sidenav.close()">Acerca de</mat-list-item>
+      <mat-list-item (click)="scrollToSection('experience'); sidenav.close()">Experiencia</mat-list-item>
+      <mat-list-item (click)="scrollToSection('services'); sidenav.close()">Servicios</mat-list-item>
+      <mat-list-item (click)="scrollToSection('portfolio'); sidenav.close()">Portafolio</mat-list-item>
+      <mat-list-item (click)="scrollToSection('contact'); sidenav.close()">Contáctame</mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>

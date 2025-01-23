@@ -1,0 +1,28 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.menu-button {
+  display: none;
+}
+
+.desktop-menu {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .menu-button {
+    display: block;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+}
