@@ -1,20 +1,50 @@
-<mat-toolbar>
-  <button mat-icon-button class="icon" aria-label="">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span class="spacer"></span>
-  <span>Here the name</span>
-  <span class="spacer"></span>
-  <button mat-button>Inicio</button>
-  <button mat-button (click)="scrollToSection('about')">Acerca de</button>
-  <button mat-button (click)="scrollToSection('experience')">Experiencia</button>
-  <button mat-button (click)="scrollToSection('services')">Servicios</button>
-  <button mat-button (click)="scrollToSection('portfolio')">Portafolio</button>
-  <button mat-button (click)="scrollToSection('contact')">Contactame</button>
-  <span class="spacer"></span>
+<div class="example-container" [class.example-is-mobile]="isMobile()">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <!-- Button to open side navigation on small devices -->
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
 
-  <!-- <button mat-icon-button class="icon dark-mode-icon" aria-label="">
-    <mat-icon>dark_mode</mat-icon>
-  </button> -->
-  <app-theme-toggle />
-</mat-toolbar>
+    <span class="spacer"></span>
+    <h1 class="toolbar-title">Your Name</h1>
+    <span class="spacer"></span>
+
+    <!-- Menu for large devices -->
+    <div class="desktop-menu">
+      @for (nav of fillerNav; track nav) {
+      <!-- <a mat-list-item routerLink=".">{{nav}}</a> -->
+      <button mat-button (click)="onNavigate('home')">{{nav.name}}</button>
+      }
+    </div>
+
+    <span class="spacer"></span>
+    <!-- Theme toggle component -->
+    <app-theme-toggle></app-theme-toggle>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="isMobile() ? 56 : 0">
+    <mat-sidenav #sidenav [mode]="isMobile() ? 'over' : 'side'" [fixedInViewport]="isMobile()" [fixedTopGap]="56">
+      <mat-nav-list>
+        @for (nav of fillerNav; track nav) {
+        <a mat-list-item routerLink=".">{{nav.name}}</a>
+        }
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+      <!-- Home component -->
+      <app-home></app-home>
+      <!-- /Home component -->
+
+      <!-- About component -->
+      <app-about></app-about>
+      <!-- /About component -->
+
+      <!-- About component -->
+      <app-experience></app-experience>
+      <!-- /About component -->
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
