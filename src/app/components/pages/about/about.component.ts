@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 
-/**
- * @title Dynamic Grid List
- */
 @Component({
-  selector: 'app-home',
+  selector: 'app-about',
   standalone: true,
   imports: [MatGridListModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.css'
 })
-export class HomeComponent {
+export class AboutComponent {
 
 }

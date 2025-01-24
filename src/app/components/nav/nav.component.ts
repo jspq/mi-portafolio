@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-
+import { ThemeToggleComponent } from '../index';
 
 /**
  * @title Basaic sidenav
@@ -19,7 +19,8 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    ThemeToggleComponent
   ],
 })
 export class NavComponent {
