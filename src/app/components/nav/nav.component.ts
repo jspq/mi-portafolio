@@ -8,7 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { ThemeToggleComponent } from '../index';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
-import { HomeComponent } from '../pages/index';
+import { HomeComponent, AboutComponent, ExperienceComponent } from '../pages/index';
 
 
 /**
@@ -29,7 +29,9 @@ import { HomeComponent } from '../pages/index';
     MatRadioModule,
     FormsModule,
     ReactiveFormsModule,
-    HomeComponent
+    HomeComponent,
+    AboutComponent,
+    ExperienceComponent,
   ],
 })
 export class NavComponent {

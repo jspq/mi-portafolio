@@ -18,16 +18,10 @@
     </div>
 
     <span class="spacer"></span>
-    <!-- Button to toggle dark mode -->
-    <button mat-icon-button class="dark-mode-toggle" aria-label="Toggle dark mode">
-      <mat-icon>dark_mode</mat-icon>
-    </button>
+    <!-- Theme toggle component -->
+    <app-theme-toggle></app-theme-toggle>
   </mat-toolbar>
 
-  <!-- <button mat-icon-button class="icon dark-mode-icon" aria-label="">
-    <mat-icon>dark_mode</mat-icon>
-  </button> -->
-  <app-theme-toggle />
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="isMobile() ? 56 : 0">
     <mat-sidenav #sidenav [mode]="isMobile() ? 'over' : 'side'" [fixedInViewport]="isMobile()" [fixedTopGap]="56">
       <mat-nav-list>
@@ -38,9 +32,19 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-      @for (content of fillerContent; track content) {
-      <p>{{content}}</p>
-      }
+
+      <!-- Home component -->
+      <app-home></app-home>
+      <!-- /Home component -->
+
+      <!-- About component -->
+      <app-about></app-about>
+      <!-- /About component -->
+
+      <!-- About component -->
+      <app-experience></app-experience>
+      <!-- /About component -->
+
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
