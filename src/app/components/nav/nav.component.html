@@ -1,38 +1,46 @@
-<mat-toolbar color="primary" class="toolbar">
-  <button mat-icon-button (click)="toggleSidenav()" class="menu-button" aria-label="">
-    <mat-icon>menu</mat-icon>
-  </button>
+<div class="example-container" [class.example-is-mobile]="isMobile()">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <!-- Button to open side navigation on small devices -->
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
 
-  <span class="spacer"></span>
-  <span class="toolbar-title">Your Name</span>
-  <span class="spacer"></span>
+    <span class="spacer"></span>
+    <h1 class="toolbar-title">Your Name</h1>
+    <span class="spacer"></span>
 
-  <div class="desktop-menu">
-    <button mat-button (click)="scrollToSection('inicio')">Inicio</button>
-    <button mat-button (click)="scrollToSection('about')">Acerca de</button>
-    <button mat-button (click)="scrollToSection('experience')">Experiencia</button>
-    <button mat-button (click)="scrollToSection('services')">Servicios</button>
-    <button mat-button (click)="scrollToSection('portfolio')">Portafolio</button>
-    <button mat-button (click)="scrollToSection('contact')">Contáctame</button>
-  </div>
+    <!-- Menu for large devices -->
+    <div class="desktop-menu">
+      @for (nav of fillerNav; track nav) {
+      <!-- <a mat-list-item routerLink=".">{{nav}}</a> -->
+      <button mat-button (click)="onNavigate('home')">{{nav.name}}</button>
+      }
+    </div>
 
-  <span class="spacer"></span>
+    <span class="spacer"></span>
+    <!-- Button to toggle dark mode -->
+    <button mat-icon-button class="dark-mode-toggle" aria-label="Toggle dark mode">
+      <mat-icon>dark_mode</mat-icon>
+    </button>
+  </mat-toolbar>
 
   <!-- <button mat-icon-button class="icon dark-mode-icon" aria-label="">
     <mat-icon>dark_mode</mat-icon>
   </button> -->
   <app-theme-toggle />
-</mat-toolbar>
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="isMobile() ? 56 : 0">
+    <mat-sidenav #sidenav [mode]="isMobile() ? 'over' : 'side'" [fixedInViewport]="isMobile()" [fixedTopGap]="56">
+      <mat-nav-list>
+        @for (nav of fillerNav; track nav) {
+        <a mat-list-item routerLink=".">{{nav.name}}</a>
+        }
+      </mat-nav-list>
+    </mat-sidenav>
 
-<mat-sidenav-container>
-  <mat-sidenav #sidenav mode="over">
-    <mat-nav-list>
-      <mat-list-item (click)="scrollToSection('inicio'); sidenav.close()">Inicio</mat-list-item>
-      <mat-list-item (click)="scrollToSection('about'); sidenav.close()">Acerca de</mat-list-item>
-      <mat-list-item (click)="scrollToSection('experience'); sidenav.close()">Experiencia</mat-list-item>
-      <mat-list-item (click)="scrollToSection('services'); sidenav.close()">Servicios</mat-list-item>
-      <mat-list-item (click)="scrollToSection('portfolio'); sidenav.close()">Portafolio</mat-list-item>
-      <mat-list-item (click)="scrollToSection('contact'); sidenav.close()">Contáctame</mat-list-item>
-    </mat-nav-list>
-  </mat-sidenav>
-</mat-sidenav-container>
+    <mat-sidenav-content>
+      @for (content of fillerContent; track content) {
+      <p>{{content}}</p>
+      }
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

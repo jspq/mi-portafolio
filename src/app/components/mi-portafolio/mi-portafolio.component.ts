@@ -20,5 +20,10 @@ import { HomeComponent, AboutComponent, ExperienceComponent } from '../pages/ind
   styleUrl: './mi-portafolio.component.css'
 })
 export class MiPortafolioComponent {
-
+  scrollToSection(section: string): void {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
