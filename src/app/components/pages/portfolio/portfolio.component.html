@@ -1,0 +1,25 @@
+<div class="container my-5 text-center">
+    <h2 class="text-center">Portafolio</h2>
+    <p class="text-muted">Explora mis proyectos y repositorios en GitHub.</p>
+  
+    <div class="mb-4">
+      <a href="https://github.com/TU_USUARIO" target="_blank" class="btn btn-dark">
+        <i class="bi bi-github"></i> Ver mi GitHub
+      </a>
+    </div>
+  
+    <div class="row justify-content-center">
+      <div class="col-md-4" *ngFor="let project of projects">
+        <div class="card shadow-sm">
+          <img [src]="project.image" class="card-img-top" alt="Project Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ project.name }}</h5>
+            <p class="card-text">{{ project.description }}</p>
+            <a [href]="project.link" target="_blank" class="btn btn-primary">
+              Ver Proyecto
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

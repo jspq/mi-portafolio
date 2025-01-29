@@ -1,0 +1,6 @@
+<div class="cursor-dot" [class.selecting]="cursorState().isSelecting" [class.clicking]="cursorState().isClicking"
+  [class.pointer]="cursorState().isPointer" [style.left.px]="cursorState().x" [style.top.px]="cursorState().y">
+</div>
+<div class="cursor-ring" [class.selecting]="cursorState().isSelecting" [class.clicking]="cursorState().isClicking"
+  [class.pointer]="cursorState().isPointer" [style.left.px]="dotPosition().x" [style.top.px]="dotPosition().y">
+</div>
