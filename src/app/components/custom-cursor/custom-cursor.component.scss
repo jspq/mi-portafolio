@@ -1,0 +1,165 @@
+// Variables for reuse and easier maintenance
+$cursor-dot-size: 8px;
+$cursor-ring-size: 27px;
+$primary-color: rgba(206, 37, 37, 0.8);
+$white: #fff;
+
+// Mixins for common transformations and transitions
+@mixin center-transform($scale: 1) {
+  transform: translate(-50%, -50%) scale($scale);
+}
+
+@mixin transition-base($properties...) {
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out, #{$properties};
+}
+
+// Base styles for the cursor
+:host {
+  pointer-events: none;
+  user-select: none;
+}
+
+// cursor for the dot
+.cursor-dot {
+  width: $cursor-dot-size;
+  height: $cursor-dot-size;
+  background-color: $white;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9999;
+  @include transition-base(background-color 0.15s ease-out);
+  @include center-transform;
+  will-change: transform;
+  mix-blend-mode: difference;
+
+  // States
+  &.clicking {
+    @include center-transform(0.7);
+  }
+
+  &.selecting {
+    opacity: 0.5;
+    @include center-transform(2.5);
+  }
+
+  &.pointer {
+    @include center-transform(1.5);
+    transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  // custom hover animation
+  &.hover-animation {
+    animation: dotHoverPulse 1.2s ease-in-out infinite alternate;
+  }
+}
+
+// cursor for the ring
+.cursor-ring {
+  width: $cursor-ring-size;
+  height: $cursor-ring-size;
+  border: 1.5px solid $primary-color;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9998;
+  @include transition-base(background-color 0.15s ease-out);
+  @include center-transform;
+  will-change: transform, opacity;
+  animation: ringPulse 2s infinite;
+
+  // States
+  &.clicking.pointer {
+    @include center-transform(0.9);
+    opacity: 0.5;
+  }
+
+  &.selecting {
+    opacity: 0.3;
+    @include center-transform(1.5);
+    border-style: dashed;
+  }
+
+  &.pointer {
+    @include center-transform(1.2);
+    border-color: rgba($white, 0.6);
+    transition: all 0.3s ease-out;
+  }
+}
+
+// Improved animations
+@keyframes dotHoverPulse {
+  0% {
+    @include center-transform(1.5);
+    opacity: 1;
+  }
+  50% {
+    @include center-transform(1.65);
+    opacity: 0.8;
+  }
+  100% {
+    @include center-transform(1.5);
+    opacity: 1;
+  }
+}
+
+@keyframes ringPulse {
+  0% {
+    @include center-transform;
+    opacity: 0.8;
+  }
+  50% {
+    @include center-transform(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    @include center-transform;
+    opacity: 0.8;
+  }
+}
+
+// Improved hover contexts
+:host-context {
+  // Buttons
+  button:hover {
+    .cursor-ring {
+      @include center-transform(1.5);
+      border-color: $white;
+      animation: none;
+    }
+    .cursor-dot {
+      background-color: $white;
+      @include center-transform(1.2);
+    }
+  }
+
+  // links
+  a:hover {
+    .cursor-ring {
+      @include center-transform(1.4);
+      border-color: $primary-color;
+      animation: none;
+    }
+    .cursor-dot {
+      @include center-transform(0.8);
+      animation: dotHoverPulse 1.2s infinite alternate;
+    }
+  }
+
+  // interactive elements
+  .interactive:hover {
+    .cursor-ring {
+      @include center-transform(1.3);
+      border-width: 2px;
+      animation: none;
+    }
+    .cursor-dot {
+      animation: dotHoverPulse 1.2s infinite alternate;
+    }
+  }
+}
+
+// Media queries for touch devices
+@media (hover: none) {
+  :host {
+    display: none;
+  }
+}
