@@ -1,34 +1,32 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Component, EventEmitter, inject, Output, signal, ViewChild } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, EventEmitter, inject, Output, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatDrawerMode, MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { ThemeToggleComponent } from '../index';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
-import { HomeComponent, AboutComponent, ExperienceComponent } from '../pages/index';
+import { HomeComponent, AboutComponent, ExperienceComponent } from '../pages';
+import { ThemeToggleComponent } from '../';
 
-
-/**
- * @title Basaic sidenav
- */
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss',
   standalone: true,
   imports: [
+    FormsModule,
+    RouterLink,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    ThemeToggleComponent,
     MatRadioModule,
-    FormsModule,
-    ReactiveFormsModule,
+    ThemeToggleComponent,
     HomeComponent,
     AboutComponent,
     ExperienceComponent,
@@ -38,12 +36,12 @@ export class NavComponent {
   @Output() navigate = new EventEmitter<string>();
 
   protected readonly fillerNav = [
-    { name: 'Inicio', path: 'home' },
-    { name: 'Acerca de', path: 'about' },
-    { name: 'Experiencia', path: 'experience' },
-    { name: 'Servicios', path: 'services' },
-    { name: 'Portafolio', path: 'portfolio' },
-    { name: 'Contáctame', path: 'contact' },
+    { name: 'Inicio', path: '#home' },
+    { name: 'Acerca de', path: '#about' },
+    { name: 'Experiencia', path: '#experience' },
+    { name: 'Servicios', path: '#services' },
+    { name: 'Portafolio', path: '#portfolio' },
+    { name: 'Contáctame', path: '#contact' },
   ];
 
   protected readonly fillerContent = Array.from(
@@ -75,6 +73,7 @@ export class NavComponent {
   }
 
   onNavigate(path: string): void {
+    console.log('onNavigate', path);
     // this.navigate.emit(path); // Emit the event to the parent components
     // if (this.sidenavService) {
     //   this.sidenavService.close(); // Close the sidenav
