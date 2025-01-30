@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { NavComponent } from '../nav/nav.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ServiceComponent } from '../pages/service/service.component';
+import { TestComponent } from '../test/test.component';
+import { PortfolioComponent } from '../pages/portfolio/portfolio.component';
+import { ContactsComponent } from '../pages/contacts/contacts.component';
 import { ScrollToTopComponent, CustomCursorComponent } from '../index';
 import { HomeComponent, AboutComponent, ExperienceComponent } from '../pages/index';
 
@@ -9,7 +13,11 @@ import { HomeComponent, AboutComponent, ExperienceComponent } from '../pages/ind
   standalone: true,
   imports: [
     NavComponent,
+    feature/contacts
+    ServiceComponent, 
+    PortfolioComponent,
     FooterComponent,
+    ContactsComponent],
     HomeComponent,
     AboutComponent,
     ExperienceComponent,
