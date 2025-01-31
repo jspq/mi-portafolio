@@ -7,6 +7,9 @@ import { PortfolioComponent } from '../pages/portfolio/portfolio.component';
 import { ContactsComponent } from '../pages/contacts/contacts.component';
 import { ScrollToTopComponent, CustomCursorComponent } from '../index';
 import { HomeComponent, AboutComponent, ExperienceComponent } from '../pages/index';
+import { ServiceComponent } from '../pages/service/service.component';
+import { PortfolioComponent } from '../pages/portfolio/portfolio.component';
+import { ContactsComponent } from '../pages/contacts/contacts.component';
 
 @Component({
   selector: 'mi-portafolio',
@@ -22,7 +25,11 @@ import { HomeComponent, AboutComponent, ExperienceComponent } from '../pages/ind
     AboutComponent,
     ExperienceComponent,
     ScrollToTopComponent,
-    CustomCursorComponent
+    CustomCursorComponent,
+    ServiceComponent,
+    PortfolioComponent,
+    FooterComponent,
+    ContactsComponent
   ],
   templateUrl: './mi-portafolio.component.html',
   styleUrl: './mi-portafolio.component.css'
