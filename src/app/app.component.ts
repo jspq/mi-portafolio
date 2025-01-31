@@ -1,20 +1,22 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { MiPortafolioComponent } from './components/mi-portafolio/mi-portafolio.component';
 import { ThemeService } from './services';
+import { ScrollToTopComponent, CustomCursorComponent } from "./components";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
-    MiPortafolioComponent
+    RouterModule,
+    MiPortafolioComponent,
+    ScrollToTopComponent,
+    CustomCursorComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'mi-portafolio';
 
   constructor(public themeService: ThemeService) { }
 }
