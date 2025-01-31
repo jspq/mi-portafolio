@@ -1,37 +1,36 @@
+import { Component, EventEmitter, inject, Output, signal } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Component, EventEmitter, inject, Output, signal, ViewChild } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatDrawerMode, MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { ThemeToggleComponent } from '../index';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
-import { HomeComponent, AboutComponent, ExperienceComponent } from '../pages/index';
+import { ThemeToggleComponent } from '../index';
+import { HomeComponent, AboutComponent, ExperienceComponent, ServiceComponent, PortfolioComponent, ContactsComponent } from '../pages';
 
-
-/**
- * @title Basaic sidenav
- */
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss',
   standalone: true,
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    ThemeToggleComponent,
     MatRadioModule,
-    FormsModule,
-    ReactiveFormsModule,
+    ThemeToggleComponent,
     HomeComponent,
     AboutComponent,
     ExperienceComponent,
+    ServiceComponent,
+    PortfolioComponent,
+    ContactsComponent
   ],
 })
 export class NavComponent {

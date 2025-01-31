@@ -1,14 +1,20 @@
-<div class="example-container" [class.example-is-mobile]="isMobile()">
-  <mat-toolbar color="primary" class="example-toolbar">
-    <!-- Button to open side navigation on small devices -->
-    <button mat-icon-button (click)="sidenav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
+<mat-toolbar color="primary" class="example-toolbar">
+  <!-- Button to open side navigation on small devices -->
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
 
-    <span class="spacer"></span>
-    <h1 class="toolbar-title">Your Name</h1>
-    <span class="spacer"></span>
-
+  <span class="spacer"></span>
+  <a routerLink="/">
+    <img
+      class="brand-logo"
+      src="/assets/logo.svg"
+      alt="logo"
+      aria-hidden="true"
+    />
+    Your Name
+  </a>
+  <span class="spacer"></span>
 
   <!-- Menu for large devices -->
   <div class="desktop-menu">
@@ -36,44 +42,20 @@
     [fixedTopGap]="56"
   >
     <mat-nav-list>
-
-    <!-- Menu for large devices -->
-    <div class="desktop-menu">
-
       @for (nav of fillerNav; track nav) {
-      <!-- <a mat-list-item routerLink=".">{{nav}}</a> -->
-      <button mat-button (click)="onNavigate('home')">{{nav.name}}</button>
+      <a mat-list-item [href]="nav.path">
+        {{ nav.name }}
+      </a>
       }
-    </div>
+    </mat-nav-list>
+  </mat-sidenav>
 
-    <span class="spacer"></span>
-    <!-- Theme toggle component -->
-    <app-theme-toggle></app-theme-toggle>
-  </mat-toolbar>
-
-  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="isMobile() ? 56 : 0">
-    <mat-sidenav #sidenav [mode]="isMobile() ? 'over' : 'side'" [fixedInViewport]="isMobile()" [fixedTopGap]="56">
-      <mat-nav-list>
-        @for (nav of fillerNav; track nav) {
-        <a mat-list-item routerLink=".">{{nav.name}}</a>
-        }
-      </mat-nav-list>
-    </mat-sidenav>
-
-    <mat-sidenav-content>
-
-      <!-- Home component -->
-      <app-home></app-home>
-      <!-- /Home component -->
-
-      <!-- About component -->
-      <app-about></app-about>
-      <!-- /About component -->
-
-      <!-- About component -->
-      <app-experience></app-experience>
-      <!-- /About component -->
-
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-</div>
+  <mat-sidenav-content>
+    <app-home></app-home>
+    <app-about></app-about>
+    <app-experience></app-experience>
+    <service></service>
+    <portfolio></portfolio>
+    <contacts></contacts>
+  </mat-sidenav-content>
+</mat-sidenav-container>
