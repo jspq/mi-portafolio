@@ -5,16 +5,15 @@ import { ThemeService } from './services';
 import { ScrollToTopComponent, CustomCursorComponent } from "./components";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterModule,
-    MiPortafolioComponent,
-    ScrollToTopComponent,
-    CustomCursorComponent
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [
+        RouterModule,
+        MiPortafolioComponent,
+        ScrollToTopComponent,
+        CustomCursorComponent
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
 

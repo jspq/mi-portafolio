@@ -12,28 +12,27 @@ import { HomeComponent, AboutComponent, ExperienceComponent, ServiceComponent, P
 import { ThemeToggleComponent } from '../';
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrl: './nav.component.scss',
-  standalone: true,
-  imports: [
-    FormsModule,
-    RouterLink,
-    ReactiveFormsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatListModule,
-    MatRadioModule,
-    ThemeToggleComponent,
-    HomeComponent,
-    AboutComponent,
-    ExperienceComponent,
-    ServiceComponent,
-    PortfolioComponent,
-    ContactsComponent
-  ],
+    selector: 'app-nav',
+    templateUrl: './nav.component.html',
+    styleUrl: './nav.component.scss',
+    imports: [
+        FormsModule,
+        RouterLink,
+        ReactiveFormsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatListModule,
+        MatRadioModule,
+        ThemeToggleComponent,
+        HomeComponent,
+        AboutComponent,
+        ExperienceComponent,
+        ServiceComponent,
+        PortfolioComponent,
+        ContactsComponent
+    ]
 })
 export class NavComponent {
   @Output() navigate = new EventEmitter<string>();

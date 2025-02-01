@@ -4,11 +4,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-scroll-to-top',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule],
-  templateUrl: './scroll-to-top.component.html',
-  styleUrl: './scroll-to-top.component.css'
+    selector: 'app-scroll-to-top',
+    imports: [CommonModule, MatButtonModule, MatIconModule],
+    templateUrl: './scroll-to-top.component.html',
+    styleUrl: './scroll-to-top.component.css'
 })
 export class ScrollToTopComponent {
   showScrollButton: boolean = false;

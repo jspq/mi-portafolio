@@ -7,18 +7,17 @@ import { CommonModule } from '@angular/common';
 //import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
-  selector: 'service',
-  standalone: true,
-  imports: [
-    //BrowserAnimationsModule,
-    //BrowserModule,
-    CommonModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule
-  ],
-  templateUrl: './service.component.html',
-  styleUrl: './service.component.css'
+    selector: 'service',
+    imports: [
+        //BrowserAnimationsModule,
+        //BrowserModule,
+        CommonModule,
+        MatIconModule,
+        MatButtonModule,
+        MatCardModule
+    ],
+    templateUrl: './service.component.html',
+    styleUrl: './service.component.css'
 })
 export class ServiceComponent {
 

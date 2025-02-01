@@ -5,11 +5,10 @@ import { ThemeService } from '../../services/index';
 
 
 @Component({
-  selector: 'app-theme-toggle',
-  standalone: true,
-  imports: [MatIconModule, MatButtonModule],
-  templateUrl: './theme-toggle.component.html',
-  styleUrl: './theme-toggle.component.css'
+    selector: 'app-theme-toggle',
+    imports: [MatIconModule, MatButtonModule],
+    templateUrl: './theme-toggle.component.html',
+    styleUrl: './theme-toggle.component.css'
 })
 export class ThemeToggleComponent {
   constructor(public themeService: ThemeService) { }

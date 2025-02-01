@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'contacts',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './contacts.component.html',
-  styleUrl: './contacts.component.css'
+    selector: 'contacts',
+    imports: [CommonModule],
+    templateUrl: './contacts.component.html',
+    styleUrl: './contacts.component.css'
 })
 export class ContactsComponent {
   phoneNumber = '+57 3143001234';

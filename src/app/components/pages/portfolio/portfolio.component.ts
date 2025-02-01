@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'portfolio',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.css'
+    selector: 'portfolio',
+    imports: [CommonModule],
+    templateUrl: './portfolio.component.html',
+    styleUrl: './portfolio.component.css'
 })
 export class PortfolioComponent {
   projects = [
