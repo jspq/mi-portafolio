@@ -4,15 +4,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { ThemeService } from '../../services/index';
 
 @Component({
-  selector: 'app-theme-toggle',
-  imports: [MatIconModule, MatButtonModule],
-  templateUrl: './theme-toggle.component.html',
-  styleUrl: './theme-toggle.component.scss',
+    selector: 'app-theme-toggle',
+    imports: [MatIconModule, MatButtonModule],
+    templateUrl: './theme-toggle.component.html',
+    styleUrl: './theme-toggle.component.scss'
 })
 export class ThemeToggleComponent {
-  constructor(public themeService: ThemeService) {}
+    constructor(public themeService: ThemeService) {}
 
-  toggleTheme(): void {
-    this.themeService.toggleTheme();
-  }
+    toggleTheme(): void {
+        this.themeService.toggleTheme();
+    }
 }

@@ -4,23 +4,23 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-scroll-to-top',
-  imports: [CommonModule, MatButtonModule, MatIconModule],
-  templateUrl: './scroll-to-top.component.html',
-  styleUrl: './scroll-to-top.component.scss',
+    selector: 'app-scroll-to-top',
+    imports: [CommonModule, MatButtonModule, MatIconModule],
+    templateUrl: './scroll-to-top.component.html',
+    styleUrl: './scroll-to-top.component.scss'
 })
 export class ScrollToTopComponent {
-  showScrollButton: boolean = false;
+    showScrollButton: boolean = false;
 
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    this.showScrollButton = window.scrollY > 300;
-  }
+    @HostListener('window:scroll')
+    onWindowScroll() {
+        this.showScrollButton = window.scrollY > 300;
+    }
 
-  scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }
+    scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
 }

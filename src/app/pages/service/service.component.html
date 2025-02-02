@@ -1,32 +1,30 @@
 <div class="container my-5">
-  <h2 class="text-center">{{ serviceTitle }}</h2>
-  <p class="text-center text-muted">{{ description }}</p>
+    <h2 class="text-center">{{ serviceTitle }}</h2>
+    <p class="text-center text-muted">{{ description }}</p>
 
-  <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div *ngFor="let service of services; let i = index" [class.active]="i === 0" class="carousel-item">
-        <div class="row align-items-center">
-          <div class="col-md-6 text-center">
-            <img [src]="service.background" class="img-fluid rounded shadow">
-          </div>
-          <div class="col-md-6">
-            <h3>{{ service.title }}</h3>
-            <p>{{ service.description }}</p>
-            <a href="#" class="btn btn-success">
-              Consultar <i class="bi bi-whatsapp"></i>
-            </a>
-          </div>
+    <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div *ngFor="let service of services; let i = index" [class.active]="i === 0" class="carousel-item">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center">
+                        <img [src]="service.background" class="img-fluid rounded shadow" />
+                    </div>
+                    <div class="col-md-6">
+                        <h3>{{ service.title }}</h3>
+                        <p>{{ service.description }}</p>
+                        <a href="#" class="btn btn-success"> Consultar <i class="bi bi-whatsapp"></i> </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 </div>
