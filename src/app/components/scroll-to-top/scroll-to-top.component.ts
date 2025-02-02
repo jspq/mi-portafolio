@@ -1,13 +1,13 @@
 import { Component, HostListener } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-scroll-to-top',
-    imports: [CommonModule, MatButtonModule, MatIconModule],
-    templateUrl: './scroll-to-top.component.html',
-    styleUrl: './scroll-to-top.component.css'
+  selector: 'app-scroll-to-top',
+  imports: [CommonModule, MatButtonModule, MatIconModule],
+  templateUrl: './scroll-to-top.component.html',
+  styleUrl: './scroll-to-top.component.scss',
 })
 export class ScrollToTopComponent {
   showScrollButton: boolean = false;
@@ -20,8 +20,7 @@ export class ScrollToTopComponent {
   scrollToTop() {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   }
-
 }

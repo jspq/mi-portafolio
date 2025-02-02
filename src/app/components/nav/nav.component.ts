@@ -8,31 +8,38 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
-import { HomeComponent, AboutComponent, ExperienceComponent, ServiceComponent, PortfolioComponent, ContactsComponent } from '../pages';
+import {
+  HomeComponent,
+  AboutComponent,
+  ExperienceComponent,
+  ServiceComponent,
+  PortfolioComponent,
+  ContactsComponent,
+} from '../../pages';
 import { ThemeToggleComponent } from '../';
 
 @Component({
-    selector: 'app-nav',
-    templateUrl: './nav.component.html',
-    styleUrl: './nav.component.scss',
-    imports: [
-        FormsModule,
-        RouterLink,
-        ReactiveFormsModule,
-        MatToolbarModule,
-        MatButtonModule,
-        MatIconModule,
-        MatSidenavModule,
-        MatListModule,
-        MatRadioModule,
-        ThemeToggleComponent,
-        HomeComponent,
-        AboutComponent,
-        ExperienceComponent,
-        ServiceComponent,
-        PortfolioComponent,
-        ContactsComponent
-    ]
+  selector: 'app-nav',
+  templateUrl: './nav.component.html',
+  styleUrl: './nav.component.scss',
+  imports: [
+    FormsModule,
+    RouterLink,
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatRadioModule,
+    ThemeToggleComponent,
+    HomeComponent,
+    AboutComponent,
+    ExperienceComponent,
+    ServiceComponent,
+    PortfolioComponent,
+    ContactsComponent,
+  ],
 })
 export class NavComponent {
   @Output() navigate = new EventEmitter<string>();
@@ -66,7 +73,8 @@ export class NavComponent {
 
     this._mobileQuery = media.matchMedia('(max-width: 600px)');
     this.isMobile.set(this._mobileQuery.matches);
-    this._mobileQueryListener = () => this.isMobile.set(this._mobileQuery.matches);
+    this._mobileQueryListener = () =>
+      this.isMobile.set(this._mobileQuery.matches);
     this._mobileQuery.addEventListener('change', this._mobileQueryListener);
   }
 
