@@ -1,6 +1,29 @@
 {
   "name": "mi-portafolio",
   "version": "1.0.0",
+  "description": "Personal portfolio developed with Angular 19",
+  "authors": [
+    {
+      "name": "Juan Sebastián Pulgarín Quintero",
+      "username": "jspq"
+    },
+    {
+      "name": "Michael Fernando Hernandez Peralta",
+      "username": "Maicol-Hernandez"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jspq/mi-portafolio",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jspq/mi-portafolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "angular",
+    "typescript",
+    "web-development"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
