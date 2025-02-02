@@ -7,7 +7,7 @@ import {
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import Aura from '@primeng/themes/aura';
 import { providePrimeNG } from 'primeng/config';
-import { appRoutes } from './app.routes';
+import { appRoutes } from '../app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
