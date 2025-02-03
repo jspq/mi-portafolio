@@ -18,7 +18,7 @@ export class OfferingService {
         return [
             {
                 id: 1,
-                title: 'Offering 1',
+                title: 'Service 1',
                 description: 'Descripcion 1',
                 background: 'https://zibtek-ghost-blog.sfo3.cdn.digitaloceanspaces.com/2021/05/image-1.png',
                 image: 'bamboo-watch.jpg',
@@ -27,7 +27,7 @@ export class OfferingService {
             },
             {
                 id: 2,
-                title: 'Offering 2',
+                title: 'Service 2',
                 description: 'Descripcion 2',
                 background: 'https://zibtek-ghost-blog.sfo3.cdn.digitaloceanspaces.com/2021/05/image-1.png',
                 image: 'black-watch.jpg',
@@ -36,7 +36,7 @@ export class OfferingService {
             },
             {
                 id: 3,
-                title: 'Offering 3',
+                title: 'Service 3',
                 description: 'Descripcion 3',
                 background: 'https://zibtek-ghost-blog.sfo3.cdn.digitaloceanspaces.com/2021/05/image-1.png',
                 image: 'blue-band.jpg',
@@ -45,7 +45,7 @@ export class OfferingService {
             },
             {
                 id: 4,
-                title: 'Offering 4',
+                title: 'Service 4',
                 description: 'Descripcion 4',
                 background: 'https://zibtek-ghost-blog.sfo3.cdn.digitaloceanspaces.com/2021/05/image-1.png',
                 image: 'chakra-bracelet.jpg',
@@ -54,7 +54,7 @@ export class OfferingService {
             },
             {
                 id: 5,
-                title: 'Offering 5',
+                title: 'Service 5',
                 description: 'Descripcion 5',
                 background: 'https://zibtek-ghost-blog.sfo3.cdn.digitaloceanspaces.com/2021/05/image-1.png',
                 image: 'bracelet.jpg',
