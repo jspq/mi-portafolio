@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Topbarwidget } from './components/nav-menu/topbarwidget';
-import { FooterWidget } from './components/footerwidget/footerwidget';
+import { FooterWidget } from './components/footerwidget';
 
 @Component({
     selector: 'app-landing',
