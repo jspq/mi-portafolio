@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
                     'pi-moon': layoutService.isDarkTheme(),
                     'pi-sun': !layoutService.isDarkTheme()
                 }"
+                style="font-size: 1.5rem"
             ></i>
         </button>
         <button
@@ -30,7 +31,7 @@ import { CommonModule } from '@angular/common';
             leaveActiveClass="animate-fadeout"
             [hideOnOutsideClick]="true"
         >
-            <i class="pi pi-palette"></i>
+            <i class="pi pi-palette" style="font-size: 1.5rem"></i>
         </button>
     `
 })
