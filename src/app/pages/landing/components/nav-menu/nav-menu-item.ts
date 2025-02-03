@@ -23,6 +23,6 @@ export class NavMenuItem {
     constructor(private router: Router) {}
 
     navigate() {
-        this.router.navigate(['/landing'], { fragment: this.fragment });
+        this.router.navigate(['/'], { fragment: this.fragment });
     }
 }

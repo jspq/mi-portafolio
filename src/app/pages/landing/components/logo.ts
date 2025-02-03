@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-logo',
     imports: [CommonModule],
     template: `
-        <a [ngClass]="['flex items-center', class]" href="#">
-            <svg [ngClass]="['h-12 mr-2', classSvg]" viewBox="0 0 54 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a [ngClass]="class" (click)="navigate()">
+            <svg [ngClass]="classSvg" viewBox="0 0 54 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -39,6 +40,13 @@ import { Component, Input } from '@angular/core';
     `
 })
 export class Logo {
-    @Input() class: string = '';
-    @Input() classSvg: string = '';
+    @Input() class: string = 'flex items-center cursor-pointer';
+    @Input() classSvg: string = 'h-12 mr-2';
+    @Input() href: string = 'home';
+
+    constructor(private router: Router) {}
+
+    navigate() {
+        this.router.navigate(['/'], { fragment: this.href });
+    }
 }
