@@ -2,7 +2,7 @@ import { Component, inject, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavMenuItem } from './nav-menu-item';
 import { NgFor } from '@angular/common';
-import { MenuService, MenuItem } from '../../../services/menu.service';
+import { MenuService, MenuItem } from '../../../service/menu.service';
 
 @Component({
     selector: 'nav-menu-list',

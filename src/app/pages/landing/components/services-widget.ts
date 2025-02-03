@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Carousel } from 'primeng/carousel';
 import { Tag } from 'primeng/tag';
 import { Button } from 'primeng/button';
-import { Offering, OfferingService } from '../../services/offering.service';
+import { Offering, OfferingService } from '../../service/offering.service';
 
 @Component({
     selector: 'service-widget',
