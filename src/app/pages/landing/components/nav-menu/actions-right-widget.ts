@@ -1,0 +1,43 @@
+import { Component } from '@angular/core';
+import { LayoutService } from '../../../../layout/service/layout.service';
+import { StyleClassModule } from 'primeng/styleclass';
+import { CommonModule } from '@angular/common';
+
+@Component({
+    selector: 'actions-right-widget',
+    standalone: true,
+    imports: [StyleClassModule, CommonModule],
+    template: `
+        <button
+            type="button"
+            class="flex items-center justify-center p-2 rounded-full transition duration-200 ease-in-out hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            (click)="toggleDarkMode()"
+        >
+            <i
+                [ngClass]="{
+                    'pi ': true,
+                    'pi-moon': layoutService.isDarkTheme(),
+                    'pi-sun': !layoutService.isDarkTheme()
+                }"
+            ></i>
+        </button>
+        <button
+            class="flex items-center justify-center p-2 rounded-full transition duration-200 ease-in-out hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            pStyleClass="@next"
+            enterFromClass="hidden"
+            enterActiveClass="animate-scalein"
+            leaveToClass="hidden"
+            leaveActiveClass="animate-fadeout"
+            [hideOnOutsideClick]="true"
+        >
+            <i class="pi pi-palette"></i>
+        </button>
+    `
+})
+export class ActionsRightWidget {
+    constructor(public layoutService: LayoutService) {}
+
+    toggleDarkMode() {
+        this.layoutService.layoutConfig.update((state) => ({ ...state, darkTheme: !state.darkTheme }));
+    }
+}
