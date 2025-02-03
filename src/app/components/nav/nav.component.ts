@@ -8,7 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
-import { HomeComponent, AboutComponent, ExperienceComponent, PortfolioComponent, ContactsComponent } from '../../pages';
+import { AboutComponent, ExperienceComponent, PortfolioComponent, ContactsComponent } from '../../pages';
 import { ThemeToggleComponent } from '../';
 
 @Component({
@@ -26,7 +26,6 @@ import { ThemeToggleComponent } from '../';
         MatListModule,
         MatRadioModule,
         ThemeToggleComponent,
-        HomeComponent,
         AboutComponent,
         ExperienceComponent,
         PortfolioComponent,
