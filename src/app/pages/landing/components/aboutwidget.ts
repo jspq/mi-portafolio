@@ -17,4 +17,4 @@ import { Component } from '@angular/core';
     `,
     styles: ``
 })
-export class Aboutwidget {}
+export class AboutWidget {}
