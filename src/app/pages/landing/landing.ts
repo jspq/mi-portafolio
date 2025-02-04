@@ -6,11 +6,21 @@ import { ServicesWidget } from './components/serviceswidget';
 import { AboutWidget } from './components/aboutwidget';
 import { ExperienceWidget } from './components/experiencewidget';
 import { PortfolioWidget } from './components/portfoliowidget';
+import { ContactsWidget } from './components/contactswidget';
 
 @Component({
     selector: 'app-landing',
     standalone: true,
-    imports: [FooterWidget, Topbarwidget, ServicesWidget, Herowidget, AboutWidget, ExperienceWidget, PortfolioWidget],
+    imports: [
+        FooterWidget,
+        Topbarwidget,
+        ServicesWidget,
+        Herowidget,
+        AboutWidget,
+        ExperienceWidget,
+        PortfolioWidget,
+        ContactsWidget
+    ],
     template: `
         <div class="bg-surface-0 dark:bg-surface-900">
             <div id="home" class="landing-wrapper overflow-hidden">
@@ -22,6 +32,7 @@ import { PortfolioWidget } from './components/portfoliowidget';
                 <experience-widget />
                 <services-widget />
                 <portfolio-widget />
+                <contacts-widget />
                 <footer-widget />
             </div>
         </div>
