@@ -5,7 +5,7 @@ import { provideRouter, withEnabledBlockingInitialNavigation, withInMemoryScroll
 import Aura from '@primeng/themes/aura';
 import { providePrimeNG } from 'primeng/config';
 import { appRoutes } from './app.routes';
-import { breakpoints } from './config/breakpoints';
+import { breakpoints } from './assets/config/breakpoints';
 
 export const appConfig: ApplicationConfig = {
     providers: [

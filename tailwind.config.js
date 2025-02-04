@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const primeui = require('tailwindcss-primeui');
-const { breakpoints } = require('./src/config/breakpoints');
+const { breakpoints } = require('./src/assets/config/breakpoints');
 module.exports = {
     darkMode: ['selector', '[class="app-dark"]'],
     content: ['./src/**/*.{html,ts,scss,css}', './index.html'],
