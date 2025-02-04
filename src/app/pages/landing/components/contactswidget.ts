@@ -16,15 +16,13 @@ interface Contact {
             id="contact"
             class="contacts-widget py-6 px-6 lg:px-20 mt-8 mx-0 lg:mx-20 bg-primary-50 dark:bg-surface-900"
         >
+            <div class="text-center mb-6">
+                <h2 class="text-3xl font-bold text-surface-900 dark:text-surface-50 mb-2">{{ title }}</h2>
+                <p class="text-surface-600 dark:text-surface-400 text-lg">{{ subtitle }}</p>
+            </div>
+
             <div class="grid grid-cols-12 gap-4 justify-center">
                 <div class="col-span-12 text-center">
-                    <h2 class="text-2xl font-semibold text-surface-900 dark:text-surface-50 mb-2">
-                        {{ title }}
-                    </h2>
-                    <p class="text-surface-600 dark:text-surface-400 text-sm mb-6">
-                        {{ description }}
-                    </p>
-
                     <div class="card flex flex-col items-center gap-4">
                         <div class="flex flex-wrap gap-4 justify-center">
                             <a
@@ -49,7 +47,7 @@ interface Contact {
 })
 export class ContactsWidget {
     @Input() title: string = 'Contáctame';
-    @Input() description: string = 'Puedes contactarme a través de mis redes sociales o llamarme directamente.';
+    @Input() subtitle: string = 'Puedes contactarme a través de mis redes sociales o llamarme directamente.';
 
     contacts: Contact[] = [
         { label: 'WhatsApp', href: `https://wa.me/+57 3143001234`, icon: 'pi-whatsapp', color: 'primary' },
