@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'experience-widget',
@@ -7,11 +7,22 @@ import { Component } from '@angular/core';
         id="experience"
         class="experience py-6 px-6 lg:px-20 mt-8 mx-0 lg:mx-20 bg-primary-50 dark:bg-surface-900"
     >
+        <div class="text-center mb-6">
+            <h2 class="text-3xl font-bold text-surface-900 dark:text-surface-50 mb-2">{{ title }}</h2>
+            <p class="text-surface-600 dark:text-surface-400 text-lg">{{ subtitle }}</p>
+        </div>
         <div class="grid grid-cols-12 gap-4 justify-center">
             <div class="col-span-12 text-center">
-                <h3 class="text-2xl font-bold mb-4">Experiencia</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum assumenda explicabo voluptates ea,
+                    veritatis possimus, vero omnis nesciunt dignissimos mollitia animi, quo perspiciatis sapiente
+                    aspernatur asperiores porro ratione voluptatibus cum!
+                </p>
             </div>
         </div>
     </section>`
 })
-export class ExperienceWidget {}
+export class ExperienceWidget {
+    @Input() title: string = 'Experiencia';
+    @Input() subtitle: string = 'Conoce más sobre mi.';
+}
