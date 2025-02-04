@@ -3,12 +3,13 @@ import { Topbarwidget } from './components/nav-menu/topbarwidget';
 import { FooterWidget } from './components/footerwidget';
 import { Herowidget } from './components/herowidget';
 import { ServicesWidget } from './components/serviceswidget';
-import { Aboutwidget } from './components/aboutwidget';
+import { AboutWidget } from './components/aboutwidget';
+import { ExperienceWidget } from './components/experiencewidget';
 
 @Component({
     selector: 'app-landing',
     standalone: true,
-    imports: [FooterWidget, Topbarwidget, ServicesWidget, Herowidget, Aboutwidget],
+    imports: [FooterWidget, Topbarwidget, ServicesWidget, Herowidget, AboutWidget, ExperienceWidget],
     template: `
         <div class="bg-surface-0 dark:bg-surface-900">
             <div id="home" class="landing-wrapper overflow-hidden">
@@ -17,6 +18,7 @@ import { Aboutwidget } from './components/aboutwidget';
                 />
                 <hero-widget />
                 <about-widget />
+                <experience-widget />
                 <services-widget />
                 <footer-widget />
             </div>
