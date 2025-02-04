@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Carousel } from 'primeng/carousel';
 import { Tag } from 'primeng/tag';
@@ -69,8 +69,8 @@ import { Offering, OfferingService } from '../../service/offering.service';
     `
 })
 export class ServicesWidget implements OnInit {
-    title: string = 'Servicios';
-    subtitle: string = 'Conoce la información de los distintos servicios.';
+    @Input() title: string = 'Servicios';
+    @Input() subtitle: string = 'Conoce la información de los distintos servicios.';
 
     offerings: Offering[] = [];
     responsiveOptions: any[] | undefined;
