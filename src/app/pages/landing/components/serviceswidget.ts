@@ -6,12 +6,12 @@ import { Button } from 'primeng/button';
 import { Offering, OfferingService } from '../../service/offering.service';
 
 @Component({
-    selector: 'service-widget',
+    selector: 'services-widget',
     standalone: true,
     imports: [CommonModule, Carousel, Tag, Button],
     providers: [OfferingService],
     template: `
-        <section id="services" class="py-6 px-6 lg:px-20 mt-8 mx-0 lg:mx-20 bg-primary-50 dark:bg-surface-900 ">
+        <section id="services" class="py-6 px-6 lg:px-20 mt-8 mx-0 lg:mx-20 bg-primary-50 dark:bg-surface-900">
             <div class="grid grid-cols-12 gap-4 justify-center">
                 <div class="col-span-12 text-center">
                     <h2 class="text-2xl font-semibold text-surface-900 dark:text-surface-50 mb-2">

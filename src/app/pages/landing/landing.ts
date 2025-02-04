@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Topbarwidget } from './components/nav-menu/topbarwidget';
 import { FooterWidget } from './components/footerwidget';
 import { Herowidget } from './components/herowidget';
-import { ServicesWidget } from './components/services-widget';
+import { ServicesWidget } from './components/serviceswidget';
 import { Aboutwidget } from './components/aboutwidget';
 
 @Component({
@@ -17,7 +17,7 @@ import { Aboutwidget } from './components/aboutwidget';
                 />
                 <hero-widget />
                 <about-widget />
-                <service-widget />
+                <services-widget />
                 <footer-widget />
             </div>
         </div>
