@@ -1,16 +1,9 @@
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
-
-interface Project {
-    title: string;
-    description: string;
-    technologies: string[];
-    image: string;
-    link: string;
-}
+import { Project, ProjectService } from '../../service/project.service';
 
 @Component({
     selector: 'portfolio-widget',
@@ -26,25 +19,46 @@ interface Project {
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="col-span-1" *ngFor="let project of projects">
-                    <p-card [style]="{ width: '100%', overflow: 'hidden' }" class="shadow-lg">
-                        <ng-template pTemplate="header">
-                            <img alt="{{ project.title }}" class="w-full h-48 object-cover" [src]="project.image" />
+                <div
+                    class="col-span-1 transform transition-all duration-300 hover:-translate-y-2"
+                    *ngFor="let project of projects"
+                >
+                    <p-card
+                        [style]="{ width: '100%', overflow: 'hidden' }"
+                        class="shadow-lg hover:shadow-2xl transition-all duration-300 rounded-lg overflow-hidden"
+                    >
+                        <ng-template #header>
+                            <div class="relative overflow-hidden">
+                                <img
+                                    alt="{{ project.title }}"
+                                    class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110"
+                                    [src]="project.image"
+                                />
+                                <div
+                                    class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300"
+                                ></div>
+                            </div>
                         </ng-template>
-                        <ng-template pTemplate="title">
-                            <h3 class="text-xl font-semibold">{{ project.title }}</h3>
+                        <ng-template #title>
+                            <h3 class="text-xl font-semibold hover:text-primary-500 transition-colors duration-300">
+                                {{ project.title }}
+                            </h3>
                         </ng-template>
-                        <ng-template pTemplate="content">
+                        <ng-template #subtitle> Card subtitle </ng-template>
+                        <ng-template #content>
                             <p class="text-sm text-surface-600 dark:text-surface-400">{{ project.description }}</p>
                         </ng-template>
-                        <ng-template pTemplate="footer">
-                            <div class="flex justify-between mt-2">
+                        <ng-template #footer>
+                            <div class="flex gap-4 mt-2">
                                 <p-button
                                     label="View Project"
                                     icon="pi pi-eye"
                                     [routerLink]="project.link"
-                                    class="w-full"
-                                ></p-button>
+                                    class="w-full transition-all duration-300 hover:scale-105"
+                                    severity="primary"
+                                    [outlined]="true"
+                                    styleClass="w-full"
+                                />
                             </div>
                         </ng-template>
                     </p-card>
@@ -52,40 +66,24 @@ interface Project {
             </div>
         </section>
     `,
-    styles: ``
+    styles: [
+        `
+            :host ::ng-deep .p-card {
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+        `
+    ]
 })
-export class PortfolioWidget {
+export class PortfolioWidget implements OnInit {
     @Input() title: string = 'Portafolio';
     @Input() subtitle: string = 'Explora mis proyectos y repositorios en GitHub.';
 
-    projects: Project[] = [
-        {
-            title: 'Proyecto 1',
-            description: 'Project description goes here. This project involves...',
-            image: 'https://miro.medium.com/v2/resize:fit:1400/1*F3nrHzMcQ8Z_TaGUpWf7_A.png',
-            link: 'https://github.com/linkProyecto',
-            technologies: ['Angular', 'TypeScript', 'HTML', 'CSS']
-        },
-        {
-            title: 'Proyecto 2',
-            description: 'Project description goes here. This project involves...',
-            image: 'https://miro.medium.com/v2/resize:fit:1400/1*F3nrHzMcQ8Z_TaGUpWf7_A.png',
-            link: 'https://github.com/linkProyecto',
-            technologies: ['Angular', 'TypeScript', 'HTML', 'CSS']
-        },
-        {
-            title: 'Proyecto 3',
-            description: 'Project description goes here. This project involves...',
-            image: 'https://miro.medium.com/v2/resize:fit:1400/1*F3nrHzMcQ8Z_TaGUpWf7_A.png',
-            link: 'https://github.com/linkProyecto',
-            technologies: ['Angular', 'TypeScript', 'HTML', 'CSS']
-        },
-        {
-            title: 'Proyecto 4',
-            description: 'Project description goes here. This project involves...',
-            image: 'https://miro.medium.com/v2/resize:fit:1400/1*F3nrHzMcQ8Z_TaGUpWf7_A.png',
-            link: 'https://github.com/linkProyecto',
-            technologies: ['Angular', 'TypeScript', 'HTML', 'CSS']
-        }
-    ];
+    projects: Project[] = [];
+
+    constructor(private projectService: ProjectService) {}
+
+    ngOnInit(): void {
+        this.projectService.getProjects().then((projects) => (this.projects = projects));
+    }
 }
