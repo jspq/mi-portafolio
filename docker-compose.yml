@@ -2,7 +2,13 @@ services:
   angular-app:
     build:
         context: .
-        dockerfile: Dockerfile
+        dockerfile: ./docker/dev/Dockerfile
     container_name: angular-app
     ports:
-      - "80:80"
+      - "4200:4200"
+    volumes:
+        # Monta el directorio actual en /app dentro del contenedor
+        - .:/app
+        # Evita que se sobreescriba la carpeta node_modules del contenedor
+        - /app/node_modules
+
