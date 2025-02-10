@@ -16,8 +16,7 @@ export class CustomCursorDirective implements OnInit, OnDestroy {
     private cursorDotElement: HTMLElement;
     private cursorRingElement: HTMLElement;
     private animationFrameId: number | null = null;
-    private readonly smoothFactor = 0.13;
-
+    private readonly smoothFactor = 0.15;
     private targetX = 0;
     private targetY = 0;
     private currentX = 0;
