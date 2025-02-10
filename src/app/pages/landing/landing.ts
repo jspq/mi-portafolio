@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollTopModule } from 'primeng/scrolltop';
 import { Topbarwidget } from './components/nav-menu/topbarwidget';
 import { FooterWidget } from './components/footerwidget';
 import { Herowidget } from './components/herowidget';
@@ -12,6 +13,7 @@ import { ContactsWidget } from './components/contactswidget';
     selector: 'app-landing',
     standalone: true,
     imports: [
+        ScrollTopModule,
         FooterWidget,
         Topbarwidget,
         ServicesWidget,
@@ -34,6 +36,12 @@ import { ContactsWidget } from './components/contactswidget';
                 <portfolio-widget />
                 <contacts-widget />
                 <footer-widget />
+
+                <p-scrolltop
+                    [threshold]="100"
+                    icon="pi pi-arrow-up"
+                    [buttonProps]="{ severity: 'primary', raised: true, rounded: true }"
+                />
             </div>
         </div>
     `
