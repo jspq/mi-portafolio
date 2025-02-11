@@ -8,7 +8,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
-import { ThemeToggleComponent } from '../';
 
 @Component({
     selector: 'app-nav',
@@ -23,8 +22,7 @@ import { ThemeToggleComponent } from '../';
         MatIconModule,
         MatSidenavModule,
         MatListModule,
-        MatRadioModule,
-        ThemeToggleComponent
+        MatRadioModule
     ]
 })
 export class NavComponent {
