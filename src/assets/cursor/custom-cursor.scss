@@ -87,7 +87,9 @@
 
 /* Media query for touch devices */
 @media (hover: none) {
-    :host {
+    :host,
+    .cursor-dot,
+    .cursor-ring {
         display: none;
     }
 }

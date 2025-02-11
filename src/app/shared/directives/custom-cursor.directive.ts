@@ -31,7 +31,7 @@ export class CustomCursorDirective implements OnInit, OnDestroy {
     };
 
     constructor(private renderer: Renderer2) {
-        // Crear elementos del cursor
+        // Create cursor elements
         this.cursorRingElement = document.createElement('div');
         this.cursorDotElement = document.createElement('div');
         this.renderer.addClass(this.cursorRingElement, 'cursor-ring');
@@ -48,7 +48,7 @@ export class CustomCursorDirective implements OnInit, OnDestroy {
     onMouseMove(e: MouseEvent): void {
         this.targetX = e.clientX;
         this.targetY = e.clientY;
-        // Actualiza el estado de posición y cursor
+        // Update position and cursor state
         const element = document.elementFromPoint(e.clientX, e.clientY);
         const computedStyle = element ? window.getComputedStyle(element) : null;
         const isPointer = computedStyle?.cursor === 'pointer';
@@ -81,7 +81,7 @@ export class CustomCursorDirective implements OnInit, OnDestroy {
         this.currentX += dx * this.smoothFactor;
         this.currentY += dy * this.smoothFactor;
 
-        // Calcula la escala del dot y ring según el estado (prioridad: clicking > selecting > pointer > default)
+        // Calculates the scale of the dot and ring based on the state (priority: clicking > selecting > pointer > default)
         let dotScale = 1;
         let ringScale = 1;
         if (this.cursorState.isClicking) {
@@ -94,9 +94,7 @@ export class CustomCursorDirective implements OnInit, OnDestroy {
             dotScale = 1.5;
             ringScale = 1.2;
         }
-
-        // Calcula las transformaciones combinando la posición y la escala,
-        // usando translate3d para la posición y translate(-50%, -50%) para centrar.
+        // Calculates the combined transformations using translate3d for position and translate(-50%, -50%) for centering.
         const dotTransform = `translate3d(${this.currentX}px, ${this.currentY}px, 0) translate(-50%, -50%) scale(${dotScale})`;
         const ringTransform = `translate3d(${this.cursorState.x}px, ${this.cursorState.y}px, 0) translate(-50%, -50%) scale(${ringScale})`;
 
