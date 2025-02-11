@@ -31,7 +31,7 @@ import { Logo } from '../logo';
                 pRipple
                 class="xl:!hidden"
                 pStyleClass="#mobileMenu"
-                enterClass="hidden"
+                enterFromClass="hidden"
                 leaveToClass="hidden"
                 [hideOnOutsideClick]="true"
             >
