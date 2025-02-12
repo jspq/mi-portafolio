@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ButtonModule, ButtonDirective } from 'primeng/button';
 
@@ -10,7 +10,7 @@ interface Contact {
 }
 @Component({
     selector: 'contacts-widget',
-    imports: [ButtonModule, NgFor],
+    imports: [ButtonModule, NgFor, NgClass],
     template: `
         <section
             id="contact"
@@ -50,11 +50,11 @@ export class ContactsWidget {
     @Input() subtitle: string = 'Puedes contactarme a través de mis redes sociales o llamarme directamente.';
 
     contacts: Contact[] = [
-        { label: 'WhatsApp', href: `https://wa.me/+57 3143001234`, icon: 'pi-whatsapp', color: 'primary' },
-        { label: 'Telegram', href: 'https://www.telegram.com/usuario', icon: 'pi-telegram', color: 'contrast' },
-        { label: 'Instagram', href: 'https://www.instagram.com/usuario', icon: 'pi-instagram', color: 'info' },
-        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/usuario', icon: 'pi-linkedin', color: 'warn' },
-        { label: 'Llamar', href: `tel:+57 3143001234`, icon: 'pi-phone', color: 'danger' }
+        { label: 'WhatsApp', href: `https://wa.me/+57 3143001234`, icon: 'pi-whatsapp', color: 'success' },
+        { label: 'Telegram', href: 'https://www.telegram.com/usuario', icon: 'pi-telegram', color: 'info' },
+        { label: 'Instagram', href: 'https://www.instagram.com/usuario', icon: 'pi-instagram', color: 'help' },
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/usuario', icon: 'pi-linkedin', color: 'info' },
+        { label: 'Llamar', href: `tel:+57 3143001234`, icon: 'pi-phone', color: 'primary' }
     ];
 
     constructor() {}
