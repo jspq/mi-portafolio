@@ -46,7 +46,7 @@ import { Offering, OfferingService } from '../../service/offering.service';
                                                 [value]="offering.inventoryStatus"
                                                 [severity]="getSeverity(offering.inventoryStatus)"
                                                 class="absolute"
-                                                styleClass="dark:!bg-surface-900"
+                                                styleClass="dark:!bg-surface-900 dark:!text-primary-600"
                                                 [ngStyle]="{ 'left.px': 5, 'top.px': 5 }"
                                             />
                                         </div>
