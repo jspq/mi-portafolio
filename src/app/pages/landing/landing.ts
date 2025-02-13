@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { Topbarwidget } from './components/nav-menu/topbarwidget';
 import { FooterWidget } from './components/footerwidget';
-import { Herowidget } from './components/herowidget';
+import { Herowidget } from './components/hero/herowidget';
 import { ServicesWidget } from './components/serviceswidget';
 import { AboutWidget } from './components/aboutwidget';
 import { ExperienceWidget } from './components/experiencewidget';

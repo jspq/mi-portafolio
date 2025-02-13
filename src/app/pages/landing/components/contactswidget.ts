@@ -10,7 +10,7 @@ interface Contact {
 }
 @Component({
     selector: 'contacts-widget',
-    imports: [ButtonModule, NgFor, NgClass],
+    imports: [ButtonModule, NgFor],
     template: `
         <section
             id="contact"
