@@ -22,47 +22,45 @@ import { Offering, OfferingService } from '../../service/offering.service';
 
             <div class="grid grid-cols-12 gap-4 justify-center">
                 <div class="col-span-12 text-center">
-                    <div class="card">
-                        <p-carousel
-                            [value]="offerings"
-                            [numVisible]="3"
-                            [numScroll]="3"
-                            [circular]="true"
-                            [responsiveOptions]="responsiveOptions"
-                            autoplayInterval="3000"
-                        >
-                            <ng-template let-offering #item>
-                                <div class="border border-surface-200 dark:border-surface-700 rounded m-2 p-4">
-                                    <div class="mb-4">
-                                        <div class="relative mx-auto">
-                                            <img
-                                                src="https://primefaces.org/cdn/primeng/images/demo/product/{{
-                                                    offering.image
-                                                }}"
-                                                [alt]="offering.title"
-                                                class="w-full rounded-border"
-                                            />
-                                            <p-tag
-                                                [value]="offering.inventoryStatus"
-                                                [severity]="getSeverity(offering.inventoryStatus)"
-                                                class="absolute"
-                                                styleClass="dark:!bg-surface-900 dark:!text-primary-600"
-                                                [ngStyle]="{ 'left.px': 5, 'top.px': 5 }"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div class="mb-4 font-medium">{{ offering.title }}</div>
-                                    <div class="flex justify-between items-center">
-                                        <div class="mt-0 font-semibold text-xl">{{ '$' + offering.price }}</div>
-                                        <span>
-                                            <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
-                                            <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
-                                        </span>
+                    <p-carousel
+                        [value]="offerings"
+                        [numVisible]="3"
+                        [numScroll]="3"
+                        [circular]="true"
+                        [responsiveOptions]="responsiveOptions"
+                        autoplayInterval="3000"
+                    >
+                        <ng-template let-offering #item>
+                            <div class="border border-surface-200 dark:border-surface-700 rounded m-2 p-4">
+                                <div class="mb-4">
+                                    <div class="relative mx-auto">
+                                        <img
+                                            src="https://primefaces.org/cdn/primeng/images/demo/product/{{
+                                                offering.image
+                                            }}"
+                                            [alt]="offering.title"
+                                            class="w-full rounded-border"
+                                        />
+                                        <p-tag
+                                            [value]="offering.inventoryStatus"
+                                            [severity]="getSeverity(offering.inventoryStatus)"
+                                            class="absolute"
+                                            styleClass="dark:!bg-surface-900 dark:!text-primary-600"
+                                            [ngStyle]="{ 'left.px': 5, 'top.px': 5 }"
+                                        />
                                     </div>
                                 </div>
-                            </ng-template>
-                        </p-carousel>
-                    </div>
+                                <div class="mb-4 font-medium">{{ offering.title }}</div>
+                                <div class="flex justify-between items-center">
+                                    <div class="mt-0 font-semibold text-xl">{{ '$' + offering.price }}</div>
+                                    <span>
+                                        <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+                                        <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+                                    </span>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-carousel>
                 </div>
             </div>
         </section>
