@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { LayoutService } from '../../../../layout/service/layout.service';
 import { StyleClassModule } from 'primeng/styleclass';
 import { CommonModule } from '@angular/common';
+import { AppConfigurator } from '../../../../layout/components/app.configurator';
 
 @Component({
     selector: 'actions-right-widget',
     standalone: true,
-    imports: [StyleClassModule, CommonModule],
+    imports: [StyleClassModule, CommonModule, AppConfigurator],
     template: `
         <button
             type="button"
@@ -33,6 +34,7 @@ import { CommonModule } from '@angular/common';
         >
             <i class="pi pi-palette" style="font-size: 1.2rem"></i>
         </button>
+        <app-configurator />
     `
 })
 export class ActionsRightWidget {
