@@ -19,27 +19,34 @@
     user-select: none;
     will-change: transform;
     // We don't define transform here because it is updated inline by the directive
-    @include transition-base(background-color 0.15s ease-out);
+    // @include transition-base(background-color 0.15s ease-out);
 }
 
 // Cursor dot (point)
 .cursor-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background-color: var(--primary-color);
     border-radius: 50%;
-    mix-blend-mode: difference;
 
-    // custom hover animation
-    &.hover-animation {
-        animation: dotHoverPulse 1.2s ease-in-out infinite alternate;
+    &.pointer {
+        opacity: 0.5;
+    }
+
+    &.clicking {
+        // Puedes personalizar la escala o el color
+        opacity: 0.8;
+    }
+
+    &.selecting {
+        opacity: 0.5;
     }
 }
 
 // Cursor ring (ring)
 .cursor-ring {
-    width: 27px;
-    height: 27px;
+    width: 30px;
+    height: 30px;
     border: 1.5px solid var(--primary-color);
     border-radius: 50%;
     // Optional pulse animation
@@ -75,17 +82,18 @@
     }
 }
 
-/* Example of hover over interactive elements */
+// Example of hover over interactive elements
 :host-context(button:hover) .cursor-ring {
     border-color: var(--p-neutral-300);
     animation: none;
 }
+
 :host-context(a:hover) .cursor-ring {
     border-color: var(--primary-color);
     animation: none;
 }
 
-/* Media query for touch devices */
+//  Media query for touch devices
 @media (hover: none) {
     :host,
     .cursor-dot,
