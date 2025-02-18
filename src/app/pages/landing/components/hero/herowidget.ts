@@ -6,39 +6,45 @@ import { trigger, style, animate, transition } from '@angular/animations';
     selector: 'hero-widget',
     imports: [ButtonModule],
     template: `
-        <section id="hero" class="hero-widget flex flex-col pt-6 px-6 lg:px-20 overflow-hidden" [@fadeIn]>
-            <div class="hero-content">
-                <h1 class="hero-title">¡Hola! Soy Maicol Hernandez</h1>
-                <p class="hero-subtitle text-lg md:text-2xl text-gray-300  dark:text-primary mt-4">
+        <section
+            id="hero"
+            class="hero-widget h-screen flex flex-col pt-6 px-6 lg:px-20 items-center justify-center overflow-hidden bg-gradient-to-tr from-red-900 via-green-900 to-blue-900"
+            [@fadeIn]
+        >
+            <div class="mt-32 text-center text-primary">
+                <h1 class="text-7xl md:text-9xl font-bold mb-4">¡Hola! Soy Maicol Hernandez</h1>
+                <p class="text-lg md:text-2xl text-gray-300 dark:text-primary mt-4">
                     Desarrollador Fullstack | Diseño Moderno | UI/UX
                 </p>
-                <!-- <p class="hero-subtitle">Desarrollador Fullstack | Diseño Moderno | UI/UX</p> -->
                 <button
                     pButton
+                    pRipple
                     type="button"
                     label="Ver mi trabajo"
-                    class="hero-button"
+                    class="text-4xl py-2 px-4"
                     routerLink="/portfolio"
                 ></button>
             </div>
-            <div class="scroll-indicator" (click)="scrollToContent()">
+            <div
+                class="absolute bottom-5 left-1/2 transform -translate-x-1/2 text-4xl cursor-pointer text-primary animate-bounce"
+                (click)="scrollToContent()"
+            >
                 <i class="pi pi-chevron-down"></i>
             </div>
         </section>
     `,
-    styleUrl: './herowidget.scss',
+    styleUrls: [],
     animations: [
         trigger('fadeIn', [
             transition(':enter', [
                 style({ opacity: 0, transform: 'translateY(20px)' }),
-                animate('1s ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+                animate('2s ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
             ])
         ])
     ]
 })
 export class Herowidget {
     scrollToContent(): void {
-        // Asumimos que la siguiente sección tiene id "next-section"
         const nextSection = document.getElementById('about');
         if (nextSection) {
             nextSection.scrollIntoView({ behavior: 'smooth' });
