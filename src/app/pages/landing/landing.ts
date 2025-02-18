@@ -25,10 +25,10 @@ import { ContactsWidget } from './components/contactswidget';
     ],
     template: `
         <div class="bg-surface-0 dark:bg-surface-900">
-            <div id="home" class="landing-wrapper overflow-hidden">
-                <topbar-widget
-                    class="py-6 px-6 mx-0 md:mx-12 xl:mx-20 xl:px-20 flex items-center justify-between relative xl:static"
-                />
+            <div id="home" class="overflow-hidden">
+                <topbar-widget />
+                <!-- class="fixed top-0 flex w-full flex-wrap items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4" -->
+
                 <hero-widget />
                 <about-widget />
                 <experience-widget />
