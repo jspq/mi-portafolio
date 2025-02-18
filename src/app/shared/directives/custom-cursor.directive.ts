@@ -21,7 +21,7 @@ export class CustomCursorDirective implements OnInit, OnDestroy {
     private animationFrameId: number | null = null;
 
     // Animation parameters
-    private readonly smoothFactor = 0.15;
+    private readonly smoothFactor = 0.3;
 
     // Target and current positions for animation
     private targetX = 0;
