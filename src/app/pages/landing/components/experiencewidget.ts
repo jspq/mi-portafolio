@@ -10,7 +10,7 @@ import { Component, Input } from '@angular/core';
         >
             <div class="text-center mb-6">
                 <h2 class="text-3xl font-bold text-surface-900 dark:text-surface-50 mb-2">{{ title }}</h2>
-                <p class="text-surface-600 dark:text-surface-400 text-lg">{{ subtitle }}</p>
+                <!-- <p class="text-surface-600 dark:text-surface-400 text-lg">{{ subtitle }}</p> -->
             </div>
             <div class="grid grid-cols-12 gap-4 justify-center">
                 <div class="col-span-12 text-center">
@@ -25,6 +25,6 @@ import { Component, Input } from '@angular/core';
     `
 })
 export class ExperienceWidget {
-    @Input() title: string = 'Experiencia';
-    @Input() subtitle: string = 'Conoce más sobre mi.';
+    @Input() title: string = 'Experiencia Profesional';
+    // @Input() subtitle: string = 'Conoce más sobre mi.';
 }
