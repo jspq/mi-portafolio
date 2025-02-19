@@ -5,7 +5,7 @@ import { FooterWidget } from './components/footerwidget';
 import { Herowidget } from './components/hero/herowidget';
 import { ServicesWidget } from './components/serviceswidget';
 import { AboutWidget } from './components/aboutwidget';
-import { ExperienceWidget } from './components/experiencewidget';
+import { ExperienceWidget } from './components/experience/experiencewidget';
 import { PortfolioWidget } from './components/portfoliowidget';
 import { ContactsWidget } from './components/contactswidget';
 
@@ -18,7 +18,7 @@ import { ContactsWidget } from './components/contactswidget';
         Topbarwidget,
         ServicesWidget,
         Herowidget,
-        AboutWidget,
+        // AboutWidget,
         ExperienceWidget,
         PortfolioWidget,
         ContactsWidget
@@ -30,7 +30,7 @@ import { ContactsWidget } from './components/contactswidget';
                 <!-- class="fixed top-0 flex w-full flex-wrap items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4" -->
 
                 <hero-widget />
-                <about-widget />
+                <!-- <about-widget /> -->
                 <experience-widget />
                 <services-widget />
                 <portfolio-widget />
