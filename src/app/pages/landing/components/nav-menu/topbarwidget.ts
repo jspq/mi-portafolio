@@ -23,7 +23,21 @@ import { Logo } from '../logo';
         Logo
     ],
     template: `
-        <p-toolbar class="fixed px-12 py-2 top-0 left-0 right-0 z-50 shadow-2xl" styleClass="!border-0 !bg-transparent">
+        <p-toolbar
+            class="
+            fixed
+            px-12 py-2
+            top-0 left-0 right-0
+            z-50
+            shadow-2xl
+            text-surface-900 dark:text-surface-0
+            backdrop-blur-md
+            bg-white/30
+            border-b border-white/50 dark:border-primary/50
+            dark:bg-surface-900/30
+            "
+            styleClass="!border-0 !bg-transparent"
+        >
             <ng-template #start>
                 <!-- Hamburger menu on the left in mobile -->
                 <a
