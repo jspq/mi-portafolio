@@ -10,7 +10,15 @@ import { RippleModule } from 'primeng/ripple';
         <a
             (click)="navigate()"
             pRipple
-            class="px-0 py-2 text-surface-900 dark:text-surface-0 font-medium text-xl cursor-pointer"
+            class="px-0 py-2
+            hover:text-primary dark:hover:text-primary-contrast-400
+            font-medium
+            text-xl
+            cursor-pointer
+            no-underline
+            text-surface-900
+            dark:text-surface-0
+            "
         >
             <span>{{ label }}</span>
         </a>
