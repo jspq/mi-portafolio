@@ -22,7 +22,7 @@ import { Logo } from './logo';
                         <div class="col-span-12 md:col-span-4">
                             <h5 class="font-semibold text-xl">Contact Us</h5>
                             <!-- <p>Email: example@example.com</p> -->
-                            <p>Phone: +1 (234) 567-890</p>
+                            <p>Phone: +57 (234) 567-890</p>
                         </div>
                         <div class="col-span-12 md:col-span-4">
                             <h5 class="font-semibold text-xl">Follow Us</h5>
