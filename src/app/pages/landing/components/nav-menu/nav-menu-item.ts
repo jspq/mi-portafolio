@@ -31,6 +31,6 @@ export class NavMenuItem {
     constructor(private router: Router) {}
 
     navigate() {
-        this.router.navigate(['/'], { fragment: this.fragment });
+        document.getElementById(this.fragment)?.scrollIntoView({ behavior: 'smooth' });
     }
 }
