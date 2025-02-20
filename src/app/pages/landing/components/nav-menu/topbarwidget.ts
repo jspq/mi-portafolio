@@ -55,11 +55,11 @@ import { Logo } from '../logo';
                     <i class="pi pi-bars !text-2xl"></i>
                 </a>
                 <!-- Logo in the center -->
-                <app-logo>
+                <!-- <app-logo>
                     <span class="text-surface-900 dark:text-surface-0 font-medium text-2xl leading-normal mr-20">
                         SAKAI
                     </span>
-                </app-logo>
+                </app-logo> -->
             </ng-template>
 
             <ng-template #center>

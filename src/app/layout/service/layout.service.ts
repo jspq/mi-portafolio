@@ -23,8 +23,8 @@ export interface LayoutState {
 export class LayoutService {
     _config: layoutConfig = {
         preset: 'Aura',
-        primary: 'emerald',
-        surface: null,
+        primary: 'indigo',
+        surface: 'slate',
         darkTheme: true,
         menuMode: 'static'
     };
